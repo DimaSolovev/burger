@@ -11,4 +11,5 @@ public class Ingredient {
     public enum Type {
         BUP, MEAT, VEGGIES, CHEESE, SAUCE
     }
+
 }

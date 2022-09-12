@@ -7,6 +7,47 @@
     <title>Order</title>
 </head>
 <body>
-
+<h1>Check your order</h1>
+<h3>Your burgers:</h3>
+<div th:each="burger : ${burgerOrder.burgers}">
+    <span th:text="${burger.name}">burger name</span>
+</div>
+<a th:href="@{/design}">Add another burger</a>
+<form method="post" th:object="${burgerOrder}">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" th:value="*{deliveryName}" id="name">
+    </div>
+    <div>
+        <label for="deliveryCity">City</label>
+        <input type="text" th:value="*{deliveryCity}" id="deliveryCity">
+    </div>
+    <div>
+        <label for="deliveryStreet">Street</label>
+        <input type="text" th:value="*{deliveryStreet}" id="deliveryStreet">
+    </div>
+    <div>
+        <label for="deliveryState">State</label>
+        <input type="text" th:value="*{deliveryState}" id="deliveryState">
+    </div>
+    <div>
+        <label for="deliveryZip">Index</label>
+        <input type="text" th:value="*{deliveryZip}" id="deliveryZip">
+    </div>
+    <h3>How you will pay</h3>
+    <div>
+        <label for="ccNumber">Credit Card Number</label>
+        <input type="text" th:value="*{ccNumber}" id="ccNumber">
+    </div>
+    <div>
+        <label for="ccExpiration">Date card</label>
+        <input type="text" th:value="*{ccExpiration}" id="ccExpiration">
+    </div>
+    <div>
+        <label for="ccCVV">CCV</label>
+        <input type="text" th:value="*{ccCVV}" id="ccCVV">
+    </div>
+    <button type="submit">Submit our order</button>
+</form>
 </body>
 </html>

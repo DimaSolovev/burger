@@ -1,3 +1,10 @@
 .img{
     width: 400px;
 }
+.design{
+    display: inline-block;
+}
+.right{
+    position: relative;
+    left: 100px;
+}

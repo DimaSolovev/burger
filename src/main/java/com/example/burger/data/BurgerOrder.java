@@ -13,6 +13,7 @@ public class BurgerOrder {
     private String deliveryStreet;
     private String deliveryState;
     private String deliveryZip;
+
     private String ccNumber;
     private String ccExpiration;
     private String ccCVV;
