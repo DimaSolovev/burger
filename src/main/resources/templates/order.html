@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <link th:href="@{/css/style.css}" rel="stylesheet"/>
 <head>
-    <meta charset="UTF-8">
+    <div th:replace="fragments/common :: myheader"></div>
     <title>Order</title>
 </head>
 <body>
@@ -13,7 +13,9 @@
     <span th:text="${burger.name}">burger name</span>
 </div>
 <a th:href="@{/design}">Add another burger</a>
+<br/><br/>
 <form method="post" th:object="${burgerOrder}">
+    <h3>Deliver my burger to ...</h3>
     <div>
         <label for="name">Name</label>
         <input type="text" th:value="*{deliveryName}" id="name">
@@ -34,7 +36,7 @@
         <label for="deliveryZip">Index</label>
         <input type="text" th:value="*{deliveryZip}" id="deliveryZip">
     </div>
-    <h3>How you will pay</h3>
+    <h3>How I will pay ...</h3>
     <div>
         <label for="ccNumber">Credit Card Number</label>
         <input type="text" th:value="*{ccNumber}" id="ccNumber">
@@ -47,7 +49,8 @@
         <label for="ccCVV">CCV</label>
         <input type="text" th:value="*{ccCVV}" id="ccCVV">
     </div>
-    <button type="submit">Submit our order</button>
+    <button type="submit">Submit your order</button>
 </form>
+<div th:insert="fragments/common :: foot"></div>
 </body>
 </html>

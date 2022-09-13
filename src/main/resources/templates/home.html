@@ -3,12 +3,13 @@
       xmlns:th="http://www.thymeleaf.org">
 <link th:href="@{/css/style.css}" rel="stylesheet"/>
 <head>
-    <meta charset="UTF-8">
+    <div th:replace="fragments/common :: myheader"></div>
     <title>Home</title>
 </head>
 <body>
 <h1>Hello dear friend</h1>
 <img class="img" th:src="@{/images/burger.jpg}"/><br/>
 <a th:href="@{/design}">Design burger</a>
+<div th:insert="fragments/common :: foot"></div>
 </body>
 </html>

@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <link th:href="@{/css/style.css}" rel="stylesheet"/>
 <head>
-    <meta charset="UTF-8">
+    <div th:replace="fragments/common :: myheader"></div>
     <title>Design</title>
 </head>
 <body>
@@ -52,5 +52,6 @@
         <button type="submit">Submit your burger</button>
     </form>
 </div>
+<div th:insert="fragments/common :: foot"></div>
 </body>
 </html>
