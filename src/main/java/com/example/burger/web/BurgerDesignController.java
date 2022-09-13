@@ -6,6 +6,7 @@ import com.example.burger.data.Ingredient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -13,6 +14,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.example.burger.data.Ingredient.*;
+
+import javax.validation.Valid;
 
 @Slf4j
 @Controller
@@ -66,9 +69,13 @@ public class BurgerDesignController {
 
     @PostMapping
     public String processBurger(
-            @ModelAttribute Burger burger,
+            @ModelAttribute @Valid Burger burger,
+            Errors errors,
             @ModelAttribute BurgerOrder burgerOrder
     ){
+        if(errors.hasErrors()){
+            return "design";
+        }
         log.info("Process burger: {}",burger);
         burgerOrder.addBurger(burger);
         return "redirect:/order/current";

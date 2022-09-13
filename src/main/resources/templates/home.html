@@ -7,9 +7,11 @@
     <title>Home</title>
 </head>
 <body>
-<h1>Hello dear friend</h1>
-<img class="img" th:src="@{/images/burger.jpg}"/><br/>
-<a th:href="@{/design}">Design burger</a>
+<div class="container">
+    <h1>Hello dear friend</h1>
+    <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
+    <a th:href="@{/design}">Design burger</a>
+</div>
 <div th:insert="fragments/common :: foot"></div>
 </body>
 </html>

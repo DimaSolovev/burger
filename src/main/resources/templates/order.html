@@ -7,50 +7,90 @@
     <title>Order</title>
 </head>
 <body>
-<h1>Check your order</h1>
-<h3>Your burgers:</h3>
-<div th:each="burger : ${burgerOrder.burgers}">
-    <span th:text="${burger.name}">burger name</span>
+<div class="container">
+    <h1>Check your order</h1>
+
+    <br/>
+    <form method="post" th:object="${burgerOrder}">
+        <div class="row">
+            <div class="col">
+                <h3>Deliver my burger to ...</h3>
+                <div class="col-5">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('deliveryName')} ? is-invalid : ''"
+                           th:value="*{deliveryName}"
+                           id="name">
+                    <div class="invalid-feedback" th:errors="*{deliveryName}">DeliveryName Error</div>
+                </div>
+                <div class="col-5">
+                    <label for="deliveryCity">City</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('deliveryCity')} ? is-invalid : ''"
+                           th:value="*{deliveryCity}"
+                           id="deliveryCity">
+                    <div class="invalid-feedback" th:errors="*{deliveryCity}">DeliveryCity Error</div>
+                </div>
+                <div class="col-5">
+                    <label for="deliveryStreet">Street</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('deliveryStreet')} ? is-invalid : ''"
+                           th:value="*{deliveryStreet}" id="deliveryStreet">
+                    <div class="invalid-feedback" th:errors="*{deliveryStreet}">DeliveryStreet Error</div>
+                </div>
+                <div class="col-5">
+                    <label for="deliveryState">State</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('deliveryState')} ? is-invalid : ''"
+                           th:value="*{deliveryState}"
+                           id="deliveryState">
+                    <div class="invalid-feedback" th:errors="*{deliveryState}">DeliveryState Error</div>
+                </div>
+                <div class="col-5">
+                    <label for="deliveryZip">Index</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('deliveryZip')} ? is-invalid : ''"
+                           th:value="*{deliveryZip}"
+                           id="deliveryZip">
+                    <div class="invalid-feedback" th:errors="*{deliveryZip}">DeliveryState Error</div>
+                </div>
+            </div>
+            <div class="col">
+                <h3>How I will pay ...</h3>
+                <div class="col-5">
+                    <label for="ccNumber">Credit Card Number</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('ccNumber')} ? is-invalid : ''"
+                           th:value="*{ccNumber}" id="ccNumber">
+                    <div class="invalid-feedback" th:errors="*{ccNumber}">CreditCard Error</div>
+                </div>
+                <div class="col-5">
+                    <label for="ccExpiration">Date card</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('ccExpiration')} ? is-invalid : ''"
+                           th:value="*{ccExpiration}"
+                           id="ccExpiration">
+                    <div class="invalid-feedback" th:errors="*{ccExpiration}">Date Error</div>
+                </div>
+                <div class="col-5">
+                    <label for="ccCVV">CCV</label>
+                    <input type="text" class="form-control"
+                           th:classappend="${#fields.hasErrors('ccCVV')} ? is-invalid : ''"
+                           th:value="*{ccCVV}" id="ccCVV">
+                    <div class="invalid-feedback" th:errors="*{ccCVV}">CCV Error</div>
+                </div>
+            </div>
+            <div class="col">
+                <h3>Your burgers:</h3>
+                <div th:each="burger : ${burgerOrder.burgers}">
+                    <span th:text="${burger.name}">burger name</span>
+                </div>
+                <a th:href="@{/design}">Add another burger</a>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit your order</button>
+    </form>
 </div>
-<a th:href="@{/design}">Add another burger</a>
-<br/><br/>
-<form method="post" th:object="${burgerOrder}">
-    <h3>Deliver my burger to ...</h3>
-    <div>
-        <label for="name">Name</label>
-        <input type="text" th:value="*{deliveryName}" id="name">
-    </div>
-    <div>
-        <label for="deliveryCity">City</label>
-        <input type="text" th:value="*{deliveryCity}" id="deliveryCity">
-    </div>
-    <div>
-        <label for="deliveryStreet">Street</label>
-        <input type="text" th:value="*{deliveryStreet}" id="deliveryStreet">
-    </div>
-    <div>
-        <label for="deliveryState">State</label>
-        <input type="text" th:value="*{deliveryState}" id="deliveryState">
-    </div>
-    <div>
-        <label for="deliveryZip">Index</label>
-        <input type="text" th:value="*{deliveryZip}" id="deliveryZip">
-    </div>
-    <h3>How I will pay ...</h3>
-    <div>
-        <label for="ccNumber">Credit Card Number</label>
-        <input type="text" th:value="*{ccNumber}" id="ccNumber">
-    </div>
-    <div>
-        <label for="ccExpiration">Date card</label>
-        <input type="text" th:value="*{ccExpiration}" id="ccExpiration">
-    </div>
-    <div>
-        <label for="ccCVV">CCV</label>
-        <input type="text" th:value="*{ccCVV}" id="ccCVV">
-    </div>
-    <button type="submit">Submit your order</button>
-</form>
 <div th:insert="fragments/common :: foot"></div>
 </body>
 </html>
