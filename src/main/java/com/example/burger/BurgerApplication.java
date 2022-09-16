@@ -5,7 +5,6 @@ import com.example.burger.repo.IngredientRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
@@ -20,8 +19,8 @@ public class BurgerApplication {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                repo.save(new Ingredient("WHIT", "Black bun", Ingredient.Type.BUP));
-                repo.save(new Ingredient("BLAC", "White bun", Ingredient.Type.BUP));
+                repo.save(new Ingredient("WHIT", "White bun", Ingredient.Type.BUN));
+                repo.save(new Ingredient("BLAC", "Black bun", Ingredient.Type.BUN));
                 repo.save(new Ingredient("CHIC", "Chicken", Ingredient.Type.MEAT));
                 repo.save(new Ingredient("PORK", "Pork", Ingredient.Type.MEAT));
                 repo.save(new Ingredient("SALD", "Salad", Ingredient.Type.VEGGIES));

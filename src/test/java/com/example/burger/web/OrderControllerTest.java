@@ -1,9 +1,12 @@
 package com.example.burger.web;
 
 import com.example.burger.data.BurgerOrder;
+import com.example.burger.repo.IngredientRepository;
+import com.example.burger.repo.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -18,6 +21,12 @@ class OrderControllerTest {
 
     @Autowired
     MockMvc mockMvc;
+
+    @MockBean
+    private IngredientRepository ingredientRepository;
+
+    @MockBean
+    private OrderRepository orderRepository;
 
     @Test
     public void testOrderPageTest() throws Exception {
@@ -65,5 +74,7 @@ class OrderControllerTest {
                 .andExpect(view().name("order"))
                 .andExpect(model().attributeHasFieldErrorCode("burgerOrder", "deliveryName", "NotBlank"));
     }
+
+
 
 }

@@ -19,7 +19,7 @@ public class Ingredient {
     private final Type type;
 
     public enum Type {
-        BUP, MEAT, VEGGIES, CHEESE, SAUCE
+        BUN, MEAT, VEGGIES, CHEESE, SAUCE
     }
 
 }
