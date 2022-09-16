@@ -9,7 +9,6 @@
 <body>
 <div class="container">
     <h1>Check your order</h1>
-
     <br/>
     <form method="post" th:object="${burgerOrder}">
         <div class="row">
@@ -19,7 +18,7 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('deliveryName')} ? is-invalid : ''"
-                           th:value="*{deliveryName}"
+                           th:field="*{deliveryName}"
                            id="name">
                     <div class="invalid-feedback" th:errors="*{deliveryName}">DeliveryName Error</div>
                 </div>
@@ -27,7 +26,7 @@
                     <label for="deliveryCity">City</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('deliveryCity')} ? is-invalid : ''"
-                           th:value="*{deliveryCity}"
+                           th:field="*{deliveryCity}"
                            id="deliveryCity">
                     <div class="invalid-feedback" th:errors="*{deliveryCity}">DeliveryCity Error</div>
                 </div>
@@ -35,14 +34,14 @@
                     <label for="deliveryStreet">Street</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('deliveryStreet')} ? is-invalid : ''"
-                           th:value="*{deliveryStreet}" id="deliveryStreet">
+                           th:field="*{deliveryStreet}" id="deliveryStreet">
                     <div class="invalid-feedback" th:errors="*{deliveryStreet}">DeliveryStreet Error</div>
                 </div>
                 <div class="col-5">
                     <label for="deliveryState">State</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('deliveryState')} ? is-invalid : ''"
-                           th:value="*{deliveryState}"
+                           th:field="*{deliveryState}"
                            id="deliveryState">
                     <div class="invalid-feedback" th:errors="*{deliveryState}">DeliveryState Error</div>
                 </div>
@@ -50,7 +49,7 @@
                     <label for="deliveryZip">Index</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('deliveryZip')} ? is-invalid : ''"
-                           th:value="*{deliveryZip}"
+                           th:field="*{deliveryZip}"
                            id="deliveryZip">
                     <div class="invalid-feedback" th:errors="*{deliveryZip}">DeliveryState Error</div>
                 </div>
@@ -61,14 +60,14 @@
                     <label for="ccNumber">Credit Card Number</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('ccNumber')} ? is-invalid : ''"
-                           th:value="*{ccNumber}" id="ccNumber">
+                           th:field="*{ccNumber}" id="ccNumber">
                     <div class="invalid-feedback" th:errors="*{ccNumber}">CreditCard Error</div>
                 </div>
                 <div class="col-5">
                     <label for="ccExpiration">Date card</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('ccExpiration')} ? is-invalid : ''"
-                           th:value="*{ccExpiration}"
+                           th:field="*{ccExpiration}"
                            id="ccExpiration">
                     <div class="invalid-feedback" th:errors="*{ccExpiration}">Date Error</div>
                 </div>
@@ -76,7 +75,7 @@
                     <label for="ccCVV">CCV</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('ccCVV')} ? is-invalid : ''"
-                           th:value="*{ccCVV}" id="ccCVV">
+                           th:field="*{ccCVV}" id="ccCVV">
                     <div class="invalid-feedback" th:errors="*{ccCVV}">CCV Error</div>
                 </div>
             </div>

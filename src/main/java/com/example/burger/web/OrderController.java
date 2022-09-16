@@ -1,6 +1,7 @@
 package com.example.burger.web;
 
 import com.example.burger.data.BurgerOrder;
+import com.example.burger.repo.OrderRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -15,6 +16,12 @@ import javax.validation.Valid;
 @SessionAttributes("burgerOrder")
 public class OrderController {
 
+    private final OrderRepository orderRepository;
+
+    public OrderController(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
     @GetMapping("/current")
     public String showOrder() {
         return "order";
@@ -22,7 +29,7 @@ public class OrderController {
 
     @PostMapping("/current")
     public String processOrder(
-            @ModelAttribute @Valid BurgerOrder burgerOrder,
+             @Valid BurgerOrder burgerOrder,
             Errors errors,
             SessionStatus sessionStatus
     ) {
@@ -30,6 +37,7 @@ public class OrderController {
             return "order";
         }
         log.info("Process order :{}", burgerOrder);
+        orderRepository.save(burgerOrder);
         sessionStatus.setComplete();
         return "redirect:/";
     }
