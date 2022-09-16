@@ -78,6 +78,6 @@ public class BurgerDesignController {
         }
         log.info("Process burger: {}",burger);
         burgerOrder.addBurger(burger);
-        return "redirect:/order/current";
+        return "redirect:/orders/current";
     }
 }

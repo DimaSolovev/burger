@@ -11,7 +11,7 @@ import javax.validation.Valid;
 
 @Slf4j
 @Controller
-@RequestMapping("/order")
+@RequestMapping("/orders")
 @SessionAttributes("burgerOrder")
 public class OrderController {
 
@@ -21,7 +21,7 @@ public class OrderController {
     }
 
     @PostMapping("/current")
-    public String processorder(
+    public String processOrder(
             @ModelAttribute @Valid BurgerOrder burgerOrder,
             Errors errors,
             SessionStatus sessionStatus
