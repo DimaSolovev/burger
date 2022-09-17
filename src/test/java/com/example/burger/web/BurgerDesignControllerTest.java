@@ -3,20 +3,25 @@ package com.example.burger.web;
 import com.example.burger.data.Ingredient;
 import com.example.burger.repo.IngredientRepository;
 import com.example.burger.repo.OrderRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(BurgerDesignController.class)
 class BurgerDesignControllerTest {
 
     @Autowired
@@ -31,21 +36,21 @@ class BurgerDesignControllerTest {
 
     private List<Ingredient> ingredients;
 
-//    @BeforeEach
-//    public void setup() {
-//        ingredients = Arrays.asList(
-//                new Ingredient("WHIT", "Black bun", Ingredient.Type.BUN),
-//                new Ingredient("BLAC", "White bun", Ingredient.Type.BUN),
-//                new Ingredient("CHIC", "Chicken", Ingredient.Type.MEAT),
-//                new Ingredient("PORK", "Pork", Ingredient.Type.MEAT),
-//                new Ingredient("SALD", "Salad", Ingredient.Type.VEGGIES),
-//                new Ingredient("CABG", "Cabbage", Ingredient.Type.VEGGIES),
-//                new Ingredient("RUSS", "Russian", Ingredient.Type.CHEESE),
-//                new Ingredient("MSDM", "Masdam", Ingredient.Type.CHEESE),
-//                new Ingredient("KTCP", "Ketchup", Ingredient.Type.SAUCE),
-//                new Ingredient("MANS", "Mayonnaise", Ingredient.Type.SAUCE)
-//        );
-//    }
+    @BeforeEach
+    public void setup() {
+        ingredients = Arrays.asList(
+                new Ingredient("WHIT", "Black bun", Ingredient.Type.BUN),
+                new Ingredient("BLAC", "White bun", Ingredient.Type.BUN),
+                new Ingredient("CHIC", "Chicken", Ingredient.Type.MEAT),
+                new Ingredient("PORK", "Pork", Ingredient.Type.MEAT),
+                new Ingredient("SALD", "Salad", Ingredient.Type.VEGGIES),
+                new Ingredient("CABG", "Cabbage", Ingredient.Type.VEGGIES),
+                new Ingredient("RUSS", "Russian", Ingredient.Type.CHEESE),
+                new Ingredient("MSDM", "Masdam", Ingredient.Type.CHEESE),
+                new Ingredient("KTCP", "Ketchup", Ingredient.Type.SAUCE),
+                new Ingredient("MANS", "Mayonnaise", Ingredient.Type.SAUCE)
+        );
+    }
 
     @Test
     public void testShowDesignForm() throws Exception {

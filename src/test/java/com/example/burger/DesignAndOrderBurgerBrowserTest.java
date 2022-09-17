@@ -1,11 +1,5 @@
 package com.example.burger;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -14,9 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DesignAndOrderBurgerBrowserTest {
@@ -52,7 +51,7 @@ public class DesignAndOrderBurgerBrowserTest {
         assertThat(browser.getCurrentUrl()).isEqualTo(homePageUrl());
     }
 
-    /
+    //
     // Browser test action methods
     //
     private void buildAndSubmitATaco(String name, String... ingredients) {
@@ -67,7 +66,7 @@ public class DesignAndOrderBurgerBrowserTest {
 
     private void assertDesignPageElements() {
         assertThat(browser.getCurrentUrl()).isEqualTo(designPageUrl());
-        List<WebElement> ingredientGroups = browser.findElementsByClassName("ingredient-group");
+        List<WebElement> ingredientGroups = browser.findElements(By.className("ingredient-group"));
         assertThat(ingredientGroups.size()).isEqualTo(5);
 
         WebElement wrapGroup = browser.findElementByCssSelector("div.ingredient-group#wraps");
@@ -188,12 +187,12 @@ public class DesignAndOrderBurgerBrowserTest {
 
     private void clickDesignATaco() {
         assertThat(browser.getCurrentUrl()).isEqualTo(homePageUrl());
-        browser.findElementByCssSelector("a[id='design']").click();
+        browser.findElement(By.cssSelector("a[id='design']")).click();
     }
 
     private void clickBuildAnotherTaco() {
         assertThat(browser.getCurrentUrl()).startsWith(orderDetailsPageUrl());
-        browser.findElementByCssSelector("a[id='another']").click();
+        browser.findElement(By.cssSelector("a[id='another']")).click();
     }
 
 
