@@ -41,7 +41,7 @@ class OrderControllerTest {
 
     @Test
     public void processOrderTest() throws Exception {
-        mockMvc.perform(post("/orders/current").flashAttr("burgerOrder", new BurgerOrder())
+        mockMvc.perform(post("/orders").flashAttr("burgerOrder", new BurgerOrder())
                         .content(
                                 "deliveryName=test" +
                                         "&deliveryCity=test" +
@@ -58,7 +58,7 @@ class OrderControllerTest {
 
     @Test
     public void processOrderErrorTest() throws Exception {
-        mockMvc.perform(post("/orders/current").flashAttr("burgerOrder", new BurgerOrder())
+        mockMvc.perform(post("/orders").flashAttr("burgerOrder", new BurgerOrder())
                         .content(
                                 "deliveryName=" +
                                         "&deliveryCity=test" +
