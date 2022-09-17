@@ -27,7 +27,7 @@ public class BurgerOrder {
     @NotBlank(message = "Delivery city is required")
     private String deliveryCity;
 
-    @NotBlank(message = "Delivery name is required")
+    @NotBlank(message = "Delivery street is required")
     private String deliveryStreet;
 
     @NotBlank(message = "Delivery state is required")
@@ -36,16 +36,13 @@ public class BurgerOrder {
     @NotBlank(message = "Delivery zip is required")
     private String deliveryZip;
 
-    @NotBlank(message = "Not a valid credit card")
     @CreditCardNumber(message = "Not a valid credit card")
     private String ccNumber;
 
-    @NotBlank(message = "Not a valid credit card")
     @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([2-9][0-9])$",
             message = "Must be formatted MM/YY")
     private String ccExpiration;
 
-    @NotBlank(message = "Not a valid credit card")
     @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
     private String ccCVV;
     @OneToMany(cascade = CascadeType.ALL)

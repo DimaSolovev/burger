@@ -14,35 +14,35 @@
         <div th:classappend="${#fields.hasErrors('ingredients')} ? is-invalid : ''"></div>
         <div class="invalid-feedback" th:errors="*{ingredients}">No ingredients</div>
         <div class="row row-cols-3">
-            <div class="col">
+            <div class="col ingredient-group" id="bun">
                 <h3>Choose Bup</h3>
-                <div th:each="ingredient : ${bup}">
+                <div th:each="ingredient : ${bun}">
                     <input type="checkbox" th:field="*{ingredients}" th:value="${ingredient.id}">
                     <span th:text="${ingredient.name}"></span><br/>
                 </div>
             </div>
-            <div class="col">
+            <div class="col ingredient-group" id="meat">
                 <h3>Choose Meat</h3>
                 <div th:each="ingredient : ${meat}">
                     <input type="checkbox" th:field="*{ingredients}" th:value="${ingredient.id}">
                     <span th:text="${ingredient.name}"></span><br/>
                 </div>
             </div>
-            <div class="col">
+            <div class="col ingredient-group" id="veggies">
                 <h3>Choose Veggies</h3>
                 <div th:each="ingredient : ${veggies}">
                     <input type="checkbox" th:field="*{ingredients}" th:value="${ingredient.id}">
                     <span th:text="${ingredient.name}"></span><br/>
                 </div>
             </div>
-            <div class="col">
+            <div class="col ingredient-group" id="cheese">
                 <h3>Choose Cheese</h3>
                 <div th:each="ingredient : ${cheese}">
                     <input type="checkbox" th:field="*{ingredients}" th:value="${ingredient.id}">
                     <span th:text="${ingredient.name}"></span><br/>
                 </div>
             </div>
-            <div class="col">
+            <div class="col ingredient-group" id="sauce">
                 <h3>Choose Sauce</h3>
                 <div th:each="ingredient : ${sauce}">
                     <input type="checkbox" th:field="*{ingredients}" th:value="${ingredient.id}">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="col-3 my-2">
-            <input type="text" class="form-control"
+            <input type="text" class="form-control" id="name"
                    th:classappend="${#fields.hasErrors('name')} ? is-invalid : ''"
                    th:field="*{name}" placeholder="Name your burger">
             <div class="invalid-feedback" th:errors="*{name}">Name Error</div>

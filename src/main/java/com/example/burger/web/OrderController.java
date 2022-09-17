@@ -27,9 +27,9 @@ public class OrderController {
         return "order";
     }
 
-    @PostMapping("/current")
+    @PostMapping()
     public String processOrder(
-             @Valid BurgerOrder burgerOrder,
+            @Valid BurgerOrder burgerOrder,
             Errors errors,
             SessionStatus sessionStatus
     ) {

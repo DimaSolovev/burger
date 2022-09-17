@@ -10,16 +10,16 @@
 <div class="container">
     <h1>Check your order</h1>
     <br/>
-    <form method="post" th:object="${burgerOrder}">
+    <form method="post" th:action="@{/orders}" th:object="${burgerOrder}">
         <div class="row">
             <div class="col">
                 <h3>Deliver my burger to ...</h3>
                 <div class="col-5">
-                    <label for="name">Name</label>
+                    <label for="deliveryName">Name</label>
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('deliveryName')} ? is-invalid : ''"
                            th:field="*{deliveryName}"
-                           id="name">
+                           id="deliveryName">
                     <div class="invalid-feedback" th:errors="*{deliveryName}">DeliveryName Error</div>
                 </div>
                 <div class="col-5">
@@ -84,7 +84,7 @@
                 <div th:each="burger : ${burgerOrder.burgers}">
                     <span th:text="${burger.name}">burger name</span>
                 </div>
-                <a th:href="@{/design}">Add another burger</a>
+                <a th:href="@{/design}" id="another">Add another burger</a>
             </div>
         </div>
         <button type="submit" class="btn btn-primary mt-2">Submit your order</button>
