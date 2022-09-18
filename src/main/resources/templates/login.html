@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet"/>
+<head>
+    <div th:replace="fragments/common :: myheader"></div>
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+    <h1>Login</h1>
+    <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
+    <h3>New here? Click <a th:href="@{/register}" id="design">here</a> to register.</h3>
+    <div class="col-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" class="form-control" name="username" id="username">
+    </div>
+    <div class="col-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="text" class="form-control" name="password" id="password">
+    </div>
+</div>
+<div th:insert="fragments/common :: foot"></div>
+</body>
+</html>
