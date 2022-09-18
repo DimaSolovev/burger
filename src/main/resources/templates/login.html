@@ -11,14 +11,17 @@
     <h1>Login</h1>
     <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
     <h3>New here? Click <a th:href="@{/register}" id="design">here</a> to register.</h3>
-    <div class="col-3">
-        <label for="username" class="form-label">Username:</label>
-        <input type="text" class="form-control" name="username" id="username">
-    </div>
-    <div class="col-3">
-        <label for="password" class="form-label">Password:</label>
-        <input type="text" class="form-control" name="password" id="password">
-    </div>
+    <form method="POST" th:action="@{/login}" id="loginForm">
+        <div class="col-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" name="username" id="username">
+        </div>
+        <div class="col-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="text" class="form-control" name="password" id="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
 </div>
 <div th:insert="fragments/common :: foot"></div>
 </body>
