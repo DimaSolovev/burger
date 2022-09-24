@@ -14,42 +14,42 @@
             <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
         </div>
         <div class="col">
-            <form method="post" th:action="@{/orders}">
+            <form method="POST" th:action="@{/register}">
                 <div class="col-3">
                     <label for="username" class="form-label">Username:</label>
-                    <input type="text" class="form-control" name="username" id="username">
+                    <input type="text" class="form-control" name="username" id="username"/>
                 </div>
                 <div class="col-3">
                     <label for="password" class="form-label">Password:</label>
-                    <input type="text" class="form-control" name="password" id="password">
+                    <input type="password" class="form-control" name="password" id="password"/>
                 </div>
                 <div class="col-3">
                     <label for="confirm" class="form-label">Confirm password:</label>
-                    <input type="text" class="form-control" name="confirm" id="confirm">
+                    <input type="password" class="form-control" name="confirm" id="confirm"/>
                 </div>
                 <div class="col-3">
                     <label for="fullname" class="form-label">Full name:</label>
-                    <input type="text" class="form-control" name="fullname" id="fullname">
+                    <input type="text" class="form-control" name="fullname" id="fullname"/>
                 </div>
                 <div class="col-3">
                     <label for="street" class="form-label">Street:</label>
-                    <input type="text" class="form-control" name="street" id="street">
+                    <input type="text" class="form-control" name="street" id="street"/>
                 </div>
                 <div class="col-3">
                     <label for="city" class="form-label">City:</label>
-                    <input type="text" class="form-control" name="city" id="city">
+                    <input type="text" class="form-control" name="city" id="city"/>
                 </div>
                 <div class="col-3">
                     <label for="state" class="form-label">State:</label>
-                    <input type="text" class="form-control" name="state" id="state">
+                    <input type="text" class="form-control" name="state" id="state"/>
                 </div>
                 <div class="col-3">
                     <label for="zip" class="form-label">Zip:</label>
-                    <input type="text" class="form-control" name="zip" id="zip">
+                    <input type="text" class="form-control" name="zip" id="zip"/>
                 </div>
                 <div class="col-3">
                     <label for="phone" class="form-label">Phone:</label>
-                    <input type="text" class="form-control" name="phone" id="phone">
+                    <input type="text" class="form-control" name="phone" id="phone"/>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Register</button>
             </form>

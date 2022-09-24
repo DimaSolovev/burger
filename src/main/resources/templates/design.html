@@ -10,7 +10,7 @@
 <div class="container">
     <h1>Design your burger</h1>
     <img class="img" th:src="@{/images/burger.jpg}"/><br/>
-    <form class="needs-validation" method="POST" th:object="${burger}">
+    <form class="needs-validation" method="POST" th:action="@{/design}" th:object="${burger}">
         <div th:classappend="${#fields.hasErrors('ingredients')} ? is-invalid : ''"></div>
         <div class="invalid-feedback" th:errors="*{ingredients}">No ingredients</div>
         <div class="row row-cols-3">

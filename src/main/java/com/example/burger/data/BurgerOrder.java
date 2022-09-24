@@ -8,18 +8,26 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
-public class BurgerOrder {
+@Table(name = "Burger_Order")
+public class BurgerOrder implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
-    private Date date = new Date();
+    @ManyToOne
+    private User user;
+
+    private Date placedAt;
 
     @NotBlank(message = "Delivery name is required")
     private String deliveryName;
@@ -45,8 +53,13 @@ public class BurgerOrder {
 
     @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
     private String ccCVV;
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Burger.class)
     private List<Burger> burgers = new ArrayList<>();
+
+    @PrePersist
+    void placedAt() {
+        this.placedAt = new Date();
+    }
 
     public void addBurger(Burger burger) {
         burgers.add(burger);

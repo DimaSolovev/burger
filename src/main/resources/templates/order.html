@@ -19,7 +19,8 @@
                     <input type="text" class="form-control"
                            th:classappend="${#fields.hasErrors('deliveryName')} ? is-invalid : ''"
                            th:field="*{deliveryName}"
-                           id="deliveryName">
+                           id="deliveryName"
+                    th:value="">
                     <div class="invalid-feedback" th:errors="*{deliveryName}">DeliveryName Error</div>
                 </div>
                 <div class="col-5">

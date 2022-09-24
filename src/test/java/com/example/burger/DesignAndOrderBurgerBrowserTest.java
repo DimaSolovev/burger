@@ -2,6 +2,7 @@ package com.example.burger;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Disabled
 public class DesignAndOrderBurgerBrowserTest {
 
     private static HtmlUnitDriver browser;
@@ -72,6 +74,7 @@ public class DesignAndOrderBurgerBrowserTest {
         fillInAndSubmitOrderForm();
         assertThat(browser.getCurrentUrl()).isEqualTo(homePageUrl());
     }
+
     //
     // Browser test action methods
     //

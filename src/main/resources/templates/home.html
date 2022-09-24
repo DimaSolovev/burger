@@ -10,6 +10,9 @@
 <div class="container">
     <h1>Hello dear friend</h1>
     <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
+    <form method="POST" th:action="@{/logout}" id="logoutForm">
+        <input type="submit" value="Logout"/>
+    </form>
     <a th:href="@{/design}" id="design">Design burger</a>
 </div>
 <div th:insert="fragments/common :: foot"></div>
