@@ -38,13 +38,18 @@ public class RegistrationController {
             Model model
     ) {
         log.info("saving user: {}", form.getFullname());
+        User user = form.toUser(passwordEncoder);
+        if (userRepo.findByUsername(user.getUsername()) != null) {
+            model.addAttribute("userExist", "User exist");
+            return "registration";
+        }
         if (errors.hasErrors()) {
             if (!confirm.equals(form.getPassword())) {
                 model.addAttribute("passError", "Password are different");
             }
             return "registration";
         }
-        userRepo.save(form.toUser(passwordEncoder));
+        userRepo.save(user);
         return "redirect:/login";
     }
 }
