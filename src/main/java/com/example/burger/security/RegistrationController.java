@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/register")
 public class RegistrationController {
 
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
+    private UserRepository userRepo;
+    private PasswordEncoder passwordEncoder;
 
-    public RegistrationController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
+    public RegistrationController(
+            UserRepository userRepo, PasswordEncoder passwordEncoder) {
+        this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -30,7 +31,7 @@ public class RegistrationController {
 
     @PostMapping
     public String processRegistration(RegistrationForm form) {
-        userRepository.save(form.toUser(passwordEncoder));
+        userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }
 
