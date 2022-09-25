@@ -2,13 +2,16 @@ package com.example.burger.security;
 
 import com.example.burger.data.User;
 import com.example.burger.repo.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
+@Slf4j
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
@@ -23,17 +26,25 @@ public class RegistrationController {
     }
 
     @GetMapping
-    public String registerForm(
-
-    ) {
+    public String registerForm(RegistrationForm registrationForm) {
         return "registration";
     }
 
     @PostMapping
-    public String processRegistration(RegistrationForm form) {
+    public String processRegistration(
+            @ModelAttribute @Valid RegistrationForm form,
+            Errors errors,
+            @RequestParam String confirm,
+            Model model
+    ) {
+        log.info("saving user: {}", form.getFullname());
+        if (errors.hasErrors()) {
+            if (!confirm.equals(form.getPassword())) {
+                model.addAttribute("passError", "Password are different");
+            }
+            return "registration";
+        }
         userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }
-
-
 }

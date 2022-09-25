@@ -14,14 +14,20 @@
             <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
         </div>
         <div class="col">
-            <form method="POST" th:action="@{/register}">
+            <form method="POST" th:action="@{/register}" th:object="${registrationForm}">
                 <div class="col-3">
                     <label for="username" class="form-label">Username:</label>
-                    <input type="text" class="form-control" name="username" id="username"/>
+                    <input type="text" class="form-control" name="username" id="username"
+                           th:classappend="${#fields.hasErrors('username')} ? is-invalid : ''"/>
+                    <div class="invalid-feedback" th:errors="*{username}">Name Error</div>
                 </div>
                 <div class="col-3">
                     <label for="password" class="form-label">Password:</label>
-                    <input type="password" class="form-control" name="password" id="password"/>
+                    <input th:classappend="${passError!=null} ? is-invalid : ''"
+                           type="password" class="form-control" name="password" id="password"/>
+                    <div class="invalid-feedback" th:if="${passError != null}" th:text="${passError}"><!--если ошибка-->
+                        PasswordError
+                    </div>
                 </div>
                 <div class="col-3">
                     <label for="confirm" class="form-label">Confirm password:</label>
