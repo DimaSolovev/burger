@@ -1,12 +1,17 @@
 package com.example.burger;
 
+import com.example.burger.repo.BurgerRepository;
 import com.example.burger.repo.IngredientRepository;
 import com.example.burger.repo.OrderRepository;
+import com.example.burger.repo.UserRepository;
+import com.example.burger.security.SecurityConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -19,6 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest
+@Import(SecurityConfig.class)
 public class HomeControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -27,7 +33,16 @@ public class HomeControllerTest {
     private IngredientRepository ingredientRepository;
 
     @MockBean
+    private BurgerRepository designRepository;
+
+    @MockBean
     private OrderRepository orderRepository;
+
+    @MockBean
+    private UserRepository userRepository;
+
+    @MockBean
+    private PasswordEncoder passwordEncoder;
 
     @Test
     public void testHomePage() throws Exception {

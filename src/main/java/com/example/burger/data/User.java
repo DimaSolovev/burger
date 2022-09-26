@@ -58,4 +58,40 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 }
