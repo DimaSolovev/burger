@@ -4,6 +4,8 @@ import com.example.burger.data.BurgerOrder;
 import com.example.burger.data.User;
 import com.example.burger.repo.OrderRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +22,12 @@ import javax.validation.Valid;
 @SessionAttributes("burgerOrder")
 public class OrderController {
 
-    private final OrderRepository orderRepository;
+    private OrderRepository orderRepository;
+    private OrderProps orderProps;
 
-    public OrderController(OrderRepository orderRepository) {
+    public OrderController(OrderRepository orderRepository, OrderProps orderProps) {
         this.orderRepository = orderRepository;
+        this.orderProps = orderProps;
     }
 
     @GetMapping("/current")
@@ -48,5 +52,15 @@ public class OrderController {
         orderRepository.save(burgerOrder);
         sessionStatus.setComplete();
         return "redirect:/";
+    }
+
+    @GetMapping
+    public String getOrders(
+            @AuthenticationPrincipal User user,
+            Model model
+    ){
+        Pageable pageable = PageRequest.of(0, orderProps.getPageSize());//нулевая страница размером 20
+        model.addAttribute("orders",orderRepository.findByUserOrderByPlacedAtDesc(user,pageable));
+        return "orderList";
     }
 }

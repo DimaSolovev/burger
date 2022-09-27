@@ -1,0 +1,296 @@
+2022-09-27 13:28:04.873  WARN 13944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-27 13:29:18.599  WARN 13944 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-09-27 13:29:23.806  INFO 15416 --- [restartedMain] com.example.burger.BurgerApplication     : Starting BurgerApplication using Java 11 on DESKTOP-Q1N1JL1 with PID 15416 (C:\D\JavaP\burger\target\classes started by Dmitrii in C:\D\JavaP\burger)
+2022-09-27 13:29:23.809  INFO 15416 --- [restartedMain] com.example.burger.BurgerApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-27 13:29:23.874  INFO 15416 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\xalan\2.7.2\xalan-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xercesImpl.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xml-apis.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/serializer.jar
+2022-09-27 13:29:23.875  INFO 15416 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\serializer\2.7.2\serializer-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/serializer/2.7.2/xml-apis.jar
+2022-09-27 13:29:23.875  INFO 15416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-27 13:29:23.876  INFO 15416 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-27 13:29:24.894  INFO 15416 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-27 13:29:24.977  INFO 15416 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+2022-09-27 13:29:25.868  INFO 15416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-27 13:29:25.884  INFO 15416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-27 13:29:25.885  INFO 15416 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-27 13:29:26.084  INFO 15416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-27 13:29:26.085  INFO 15416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2209 ms
+2022-09-27 13:29:26.128  INFO 15416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Starting...
+2022-09-27 13:29:26.277  INFO 15416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Start completed.
+2022-09-27 13:29:26.294  INFO 15416 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:burger'
+2022-09-27 13:29:26.451  INFO 15416 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-27 13:29:26.510  INFO 15416 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-27 13:29:26.681  INFO 15416 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-27 13:29:26.821  INFO 15416 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-27 13:29:27.850  INFO 15416 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-27 13:29:27.861  INFO 15416 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 13:29:28.526  WARN 15416 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-27 13:29:28.820  INFO 15416 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6cd56dd0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b8e0e56, org.springframework.security.web.context.SecurityContextPersistenceFilter@5babe621, org.springframework.security.web.header.HeaderWriterFilter@2da97a2a, org.springframework.security.web.csrf.CsrfFilter@5cc0707e, org.springframework.security.web.authentication.logout.LogoutFilter@5c3d7df9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31129831, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@683d5f68, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f799ace, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51677fbb, org.springframework.security.web.session.SessionManagementFilter@3e63c380, org.springframework.security.web.access.ExceptionTranslationFilter@3e415f52, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1652b8f4]
+2022-09-27 13:29:29.170  INFO 15416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-27 13:29:29.235  INFO 15416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-27 13:29:29.253  INFO 15416 --- [restartedMain] com.example.burger.BurgerApplication     : Started BurgerApplication in 6.061 seconds (JVM running for 7.928)
+2022-09-27 13:40:19.846  INFO 15416 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 13:40:19.848  INFO 15416 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-27 13:40:20.067  WARN 15416 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-09-27 13:40:20.069  INFO 15416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown initiated...
+2022-09-27 13:40:20.074  INFO 15416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown completed.
+2022-09-27 14:56:12.616  INFO 6736 --- [restartedMain] com.example.burger.BurgerApplication     : Starting BurgerApplication using Java 11 on DESKTOP-Q1N1JL1 with PID 6736 (C:\D\JavaP\burger\target\classes started by Dmitrii in C:\D\JavaP\burger)
+2022-09-27 14:56:12.618  INFO 6736 --- [restartedMain] com.example.burger.BurgerApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-27 14:56:12.678  INFO 6736 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\xalan\2.7.2\xalan-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xercesImpl.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xml-apis.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/serializer.jar
+2022-09-27 14:56:12.679  INFO 6736 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\serializer\2.7.2\serializer-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/serializer/2.7.2/xml-apis.jar
+2022-09-27 14:56:12.679  INFO 6736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-27 14:56:12.680  INFO 6736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-27 14:56:13.687  INFO 6736 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-27 14:56:13.765  INFO 6736 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2022-09-27 14:56:14.620  INFO 6736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-27 14:56:14.631  INFO 6736 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-27 14:56:14.632  INFO 6736 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-27 14:56:14.822  INFO 6736 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-27 14:56:14.823  INFO 6736 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2143 ms
+2022-09-27 14:56:14.863  INFO 6736 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Starting...
+2022-09-27 14:56:15.004  INFO 6736 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Start completed.
+2022-09-27 14:56:15.020  INFO 6736 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:burger'
+2022-09-27 14:56:15.175  INFO 6736 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-27 14:56:15.231  INFO 6736 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-27 14:56:15.399  INFO 6736 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-27 14:56:15.536  INFO 6736 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-27 14:56:16.512  INFO 6736 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-27 14:56:16.524  INFO 6736 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 14:56:17.149  WARN 6736 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-27 14:56:17.445  INFO 6736 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54dbeb37, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38b14bb7, org.springframework.security.web.context.SecurityContextPersistenceFilter@20018d, org.springframework.security.web.header.HeaderWriterFilter@3b6b09b, org.springframework.security.web.csrf.CsrfFilter@705bc99a, org.springframework.security.web.authentication.logout.LogoutFilter@3d616393, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5acf6dae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@197f745d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1355f526, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19efc2ef, org.springframework.security.web.session.SessionManagementFilter@6d2d4386, org.springframework.security.web.access.ExceptionTranslationFilter@2134875a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19f3b1f8]
+2022-09-27 14:56:17.763  INFO 6736 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-27 14:56:17.817  INFO 6736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-27 14:56:17.833  INFO 6736 --- [restartedMain] com.example.burger.BurgerApplication     : Started BurgerApplication in 5.93 seconds (JVM running for 7.878)
+2022-09-27 14:56:42.350  INFO 6736 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-27 14:56:42.351  INFO 6736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-27 14:56:42.354  INFO 6736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-09-27 14:56:43.172  WARN 6736 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [401] milliseconds.
+2022-09-27 14:57:02.631  INFO 6736 --- [http-nio-8080-exec-7] c.e.b.security.RegistrationController    : saving user: dmitrii
+2022-09-27 14:57:12.172  INFO 6736 --- [http-nio-8080-exec-6] c.e.burger.web.BurgerDesignController    : saving burger: Burger(id=null, name=Dimas, ingredients=[Ingredient(id=WHIT, name=White bun, type=BUN), Ingredient(id=BLAC, name=Black bun, type=BUN)], createdAt=null)
+2022-09-27 14:57:30.271  INFO 6736 --- [http-nio-8080-exec-4] com.example.burger.web.OrderController   : Process order :BurgerOrder(id=null, user=null, placedAt=null, deliveryName=dmitrii, deliveryCity=habarovsk, deliveryStreet=saniternui, deliveryState=hab, deliveryZip=600003, ccNumber=4276160962782026, ccExpiration=12/23, ccCVV=123, burgers=[Burger(id=2, name=Dimas, ingredients=[Ingredient(id=WHIT, name=White bun, type=BUN), Ingredient(id=BLAC, name=Black bun, type=BUN)], createdAt=Tue Sep 27 14:57:12 VLAT 2022)])
+2022-09-27 15:11:02.512  INFO 6736 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 15:11:02.513  INFO 6736 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-27 15:11:02.730  WARN 6736 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-09-27 15:11:02.732  INFO 6736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown initiated...
+2022-09-27 15:11:02.737  INFO 6736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown completed.
+2022-09-27 15:11:08.980  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : Starting BurgerApplication using Java 11 on DESKTOP-Q1N1JL1 with PID 1920 (C:\D\JavaP\burger\target\classes started by Dmitrii in C:\D\JavaP\burger)
+2022-09-27 15:11:08.982  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-27 15:11:09.041  WARN 1920 --- [restartedMain] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'class path resource [application.yaml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yaml] - 21:13]
+2022-09-27 15:11:09.044  INFO 1920 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\xalan\2.7.2\xalan-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xercesImpl.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xml-apis.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/serializer.jar
+2022-09-27 15:11:09.045  INFO 1920 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\serializer\2.7.2\serializer-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/serializer/2.7.2/xml-apis.jar
+2022-09-27 15:11:09.045  INFO 1920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-27 15:11:09.045  INFO 1920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-27 15:11:10.038  INFO 1920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-27 15:11:10.115  INFO 1920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 4 JPA repository interfaces.
+2022-09-27 15:11:10.959  INFO 1920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-27 15:11:10.970  INFO 1920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-27 15:11:10.971  INFO 1920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-27 15:11:11.153  INFO 1920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-27 15:11:11.154  INFO 1920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2108 ms
+2022-09-27 15:11:11.194  INFO 1920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Starting...
+2022-09-27 15:11:11.336  INFO 1920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Start completed.
+2022-09-27 15:11:11.353  INFO 1920 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:burger'
+2022-09-27 15:11:11.532  INFO 1920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-27 15:11:11.591  INFO 1920 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-27 15:11:11.768  INFO 1920 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-27 15:11:11.920  INFO 1920 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-27 15:11:12.942  INFO 1920 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-27 15:11:12.954  INFO 1920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 15:11:13.573  WARN 1920 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-27 15:11:13.872  INFO 1920 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2542d50c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75abb79f, org.springframework.security.web.context.SecurityContextPersistenceFilter@7612a358, org.springframework.security.web.header.HeaderWriterFilter@35bfd05f, org.springframework.security.web.csrf.CsrfFilter@1d8df4be, org.springframework.security.web.authentication.logout.LogoutFilter@4ffeda38, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@30a24e0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e329738, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d4a53cc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14827888, org.springframework.security.web.session.SessionManagementFilter@7f57fdad, org.springframework.security.web.access.ExceptionTranslationFilter@763077ab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61005f10]
+2022-09-27 15:11:14.185  INFO 1920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-27 15:11:14.239  INFO 1920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-27 15:11:14.255  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : Started BurgerApplication in 5.962 seconds (JVM running for 7.905)
+2022-09-27 15:13:22.304  INFO 1920 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 18 class path changes (0 additions, 18 deletions, 0 modifications)
+2022-09-27 15:13:22.733  INFO 1920 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-27 15:13:22.745  WARN 1920 --- [Thread-5] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [burger housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ java.base@11/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@11/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@11/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
+ java.base@11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
+ java.base@11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11/java.lang.Thread.run(Thread.java:834)
+2022-09-27 15:13:22.757  INFO 1920 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 15:13:22.758  INFO 1920 --- [Thread-5] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-27 15:13:22.979  WARN 1920 --- [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-09-27 15:13:22.981  INFO 1920 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown initiated...
+2022-09-27 15:13:22.987  INFO 1920 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown completed.
+2022-09-27 15:13:23.187  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : Starting BurgerApplication using Java 11 on DESKTOP-Q1N1JL1 with PID 1920 (C:\D\JavaP\burger\target\classes started by Dmitrii in C:\D\JavaP\burger)
+2022-09-27 15:13:23.188  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-27 15:13:23.196  WARN 1920 --- [restartedMain] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'class path resource [application.yaml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yaml] - 21:13]
+2022-09-27 15:13:23.752  INFO 1920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-27 15:13:23.825 ERROR 1920 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type com.example.burger.data.Burger not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1138) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:501) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.buildTypeVariableMap(GenericTypeResolver.java:271) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.getTypeVariableMap(GenericTypeResolver.java:248) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:120) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:109) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.<init>(ClassTypeInformation.java:96) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[na:na]
+	at org.springframework.data.util.ClassTypeInformation.from(ClassTypeInformation.java:73) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.<init>(AbstractRepositoryMetadata.java:63) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:50) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:78) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:104) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:159) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.22.jar:5.3.22]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.example.burger.BurgerApplication.main(BurgerApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.ClassNotFoundException: com.example.burger.data.Burger
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114) ~[na:na]
+	... 45 common frames omitted
+
+2022-09-27 15:13:27.387  INFO 1920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-27 15:13:27.389  INFO 1920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-27 15:13:27.398  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : Starting BurgerApplication using Java 11 on DESKTOP-Q1N1JL1 with PID 1920 (C:\D\JavaP\burger\target\classes started by Dmitrii in C:\D\JavaP\burger)
+2022-09-27 15:13:27.398  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-27 15:13:27.403  WARN 1920 --- [restartedMain] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'class path resource [application.yaml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yaml] - 21:13]
+2022-09-27 15:13:27.878  INFO 1920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-27 15:13:27.920  INFO 1920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 4 JPA repository interfaces.
+2022-09-27 15:13:28.187  INFO 1920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-27 15:13:28.189  INFO 1920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-27 15:13:28.190  INFO 1920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-27 15:13:28.264  INFO 1920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-27 15:13:28.265  INFO 1920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 862 ms
+2022-09-27 15:13:28.289  INFO 1920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Starting...
+2022-09-27 15:13:28.293  INFO 1920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Start completed.
+2022-09-27 15:13:28.294  INFO 1920 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:burger'
+2022-09-27 15:13:28.360  INFO 1920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-27 15:13:28.375  INFO 1920 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-27 15:13:28.562  INFO 1920 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-27 15:13:28.562  INFO 1920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 15:13:28.731  WARN 1920 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-27 15:13:28.825  INFO 1920 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@44a0e1d3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f327263, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c3bed4a, org.springframework.security.web.header.HeaderWriterFilter@40e4d818, org.springframework.security.web.csrf.CsrfFilter@619291dc, org.springframework.security.web.authentication.logout.LogoutFilter@37d6ad3a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43947fd2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f3746a5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9757743, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@fb725a5, org.springframework.security.web.session.SessionManagementFilter@195293cd, org.springframework.security.web.access.ExceptionTranslationFilter@2e05b151, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e59d78f]
+2022-09-27 15:13:28.924  INFO 1920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-27 15:13:28.943  INFO 1920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-27 15:13:28.950  INFO 1920 --- [restartedMain] com.example.burger.BurgerApplication     : Started BurgerApplication in 1.598 seconds (JVM running for 142.601)
+2022-09-27 15:13:28.974  INFO 1920 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-09-27 15:28:33.078  INFO 1920 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 15:28:33.079  INFO 1920 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-27 15:28:33.299  WARN 1920 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-09-27 15:28:33.301  INFO 1920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown initiated...
+2022-09-27 15:28:33.304  INFO 1920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown completed.
+2022-09-27 16:09:37.587  INFO 4528 --- [restartedMain] com.example.burger.BurgerApplication     : Starting BurgerApplication using Java 11 on DESKTOP-Q1N1JL1 with PID 4528 (C:\D\JavaP\burger\target\classes started by Dmitrii in C:\D\JavaP\burger)
+2022-09-27 16:09:37.589  INFO 4528 --- [restartedMain] com.example.burger.BurgerApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-27 16:09:37.644  WARN 4528 --- [restartedMain] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'class path resource [application.yaml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yaml] - 25:13]
+2022-09-27 16:09:37.647  INFO 4528 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\xalan\2.7.2\xalan-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xercesImpl.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xml-apis.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/serializer.jar
+2022-09-27 16:09:37.647  INFO 4528 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\serializer\2.7.2\serializer-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/serializer/2.7.2/xml-apis.jar
+2022-09-27 16:09:37.648  INFO 4528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-27 16:09:37.648  INFO 4528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-27 16:09:38.629  INFO 4528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-27 16:09:38.707  INFO 4528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 4 JPA repository interfaces.
+2022-09-27 16:09:39.547  INFO 4528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-27 16:09:39.558  INFO 4528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-27 16:09:39.559  INFO 4528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-27 16:09:39.742  INFO 4528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-27 16:09:39.743  INFO 4528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2094 ms
+2022-09-27 16:09:39.783  INFO 4528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Starting...
+2022-09-27 16:09:39.949  INFO 4528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Start completed.
+2022-09-27 16:09:39.966  INFO 4528 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:burger'
+2022-09-27 16:09:40.143  INFO 4528 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-27 16:09:40.202  INFO 4528 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-27 16:09:40.384  INFO 4528 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-27 16:09:40.528  INFO 4528 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-27 16:09:41.549  INFO 4528 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-27 16:09:41.560  INFO 4528 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 16:09:42.185  WARN 4528 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-27 16:09:42.487  INFO 4528 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c8ebac2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5929bdb9, org.springframework.security.web.context.SecurityContextPersistenceFilter@79a2db6, org.springframework.security.web.header.HeaderWriterFilter@1d6ba127, org.springframework.security.web.csrf.CsrfFilter@732c62e3, org.springframework.security.web.authentication.logout.LogoutFilter@2e20ff5f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@56b60ed5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a74019b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6cbca255, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ce81a57, org.springframework.security.web.session.SessionManagementFilter@7998b773, org.springframework.security.web.access.ExceptionTranslationFilter@26dda544, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@511b5e24]
+2022-09-27 16:09:42.803  INFO 4528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-27 16:09:42.857  INFO 4528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-27 16:09:42.875  INFO 4528 --- [restartedMain] com.example.burger.BurgerApplication     : Started BurgerApplication in 6.039 seconds (JVM running for 8.309)
+2022-09-27 16:09:54.978  INFO 4528 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-27 16:09:54.979  INFO 4528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-27 16:09:54.981  INFO 4528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-27 16:09:55.730  WARN 4528 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [376] milliseconds.
+2022-09-27 16:10:07.661  INFO 4528 --- [http-nio-8080-exec-6] c.e.burger.web.BurgerDesignController    : saving burger: Burger(id=null, name=Dimas, ingredients=[Ingredient(id=WHIT, name=White bun, type=BUN), Ingredient(id=BLAC, name=Black bun, type=BUN)], createdAt=null)
+2022-09-27 16:10:34.073  INFO 4528 --- [http-nio-8080-exec-9] com.example.burger.web.OrderController   : Process order :BurgerOrder(id=null, user=null, placedAt=null, deliveryName=Craig Walls, deliveryCity=Cross Roads, deliveryStreet=123 North Street, deliveryState=TX, deliveryZip=76227, ccNumber=4276160962782026, ccExpiration=12/23, ccCVV=123, burgers=[Burger(id=2, name=Dimas, ingredients=[Ingredient(id=WHIT, name=White bun, type=BUN), Ingredient(id=BLAC, name=Black bun, type=BUN)], createdAt=Tue Sep 27 16:10:07 VLAT 2022)])
+2022-09-27 16:12:10.803  INFO 4528 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 16:12:10.804  INFO 4528 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-27 16:12:11.031  WARN 4528 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-09-27 16:12:11.034  INFO 4528 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown initiated...
+2022-09-27 16:12:11.050  INFO 4528 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown completed.
+2022-09-27 16:12:17.785  INFO 3944 --- [restartedMain] com.example.burger.BurgerApplication     : Starting BurgerApplication using Java 11 on DESKTOP-Q1N1JL1 with PID 3944 (C:\D\JavaP\burger\target\classes started by Dmitrii in C:\D\JavaP\burger)
+2022-09-27 16:12:17.787  INFO 3944 --- [restartedMain] com.example.burger.BurgerApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-27 16:12:17.846  WARN 3944 --- [restartedMain] o.s.b.c.config.ConfigDataEnvironment     : Property 'spring.profiles' imported from location 'class path resource [application.yaml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yaml] - 25:13]
+2022-09-27 16:12:17.848  INFO 3944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\xalan\2.7.2\xalan-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xercesImpl.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/xml-apis.jar,file:/C:/Users/Дмитрий/.m2/repository/xalan/xalan/2.7.2/serializer.jar
+2022-09-27 16:12:17.849  INFO 3944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Дмитрий\.m2\repository\xalan\serializer\2.7.2\serializer-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Дмитрий/.m2/repository/xalan/serializer/2.7.2/xml-apis.jar
+2022-09-27 16:12:17.849  INFO 3944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-27 16:12:17.850  INFO 3944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-27 16:12:19.050  INFO 3944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-27 16:12:19.172  INFO 3944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2022-09-27 16:12:20.335  INFO 3944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-27 16:12:20.347  INFO 3944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-27 16:12:20.348  INFO 3944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-27 16:12:20.574  INFO 3944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-27 16:12:20.575  INFO 3944 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2725 ms
+2022-09-27 16:12:20.624  INFO 3944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Starting...
+2022-09-27 16:12:20.812  INFO 3944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : burger - Start completed.
+2022-09-27 16:12:20.846  INFO 3944 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:burger'
+2022-09-27 16:12:21.129  INFO 3944 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-27 16:12:21.198  INFO 3944 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-27 16:12:21.427  INFO 3944 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-27 16:12:21.642  INFO 3944 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-27 16:12:22.742  INFO 3944 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-27 16:12:22.754  INFO 3944 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 16:12:23.365  WARN 3944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-27 16:12:23.668  INFO 3944 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5e0766e9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ae09838, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a59c88c, org.springframework.security.web.header.HeaderWriterFilter@400ec919, org.springframework.security.web.csrf.CsrfFilter@71c17c2d, org.springframework.security.web.authentication.logout.LogoutFilter@46243057, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3299d0fe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ff59d27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f1aba85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1124ff25, org.springframework.security.web.session.SessionManagementFilter@714c16bb, org.springframework.security.web.access.ExceptionTranslationFilter@519e7344, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@439a8d96]
+2022-09-27 16:12:24.001  INFO 3944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-27 16:12:24.057  INFO 3944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-27 16:12:24.075  INFO 3944 --- [restartedMain] com.example.burger.BurgerApplication     : Started BurgerApplication in 6.993 seconds (JVM running for 9.314)
+2022-09-27 16:12:24.433  INFO 3944 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-27 16:12:24.435  INFO 3944 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-27 16:12:24.436  INFO 3944 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-27 16:15:16.131  INFO 3944 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-27 16:15:16.132  INFO 3944 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-27 16:15:16.346  WARN 3944 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-09-27 16:15:16.348  INFO 3944 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown initiated...
+2022-09-27 16:15:16.353  INFO 3944 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : burger - Shutdown completed.
