@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-@ConfigurationProperties(prefix="taco.discount")
+@ConfigurationProperties(prefix="burger.discount")
 @Data
 public class DiscountCodeProps {
 

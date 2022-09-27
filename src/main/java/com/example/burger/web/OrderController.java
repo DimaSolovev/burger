@@ -59,7 +59,7 @@ public class OrderController {
             @AuthenticationPrincipal User user,
             Model model
     ){
-        Pageable pageable = PageRequest.of(0, orderProps.getPageSize());//нулевая страница размером 20
+        Pageable pageable = PageRequest.of(0, orderProps.getPageSize());//нулевая страница размером 10
         model.addAttribute("orders",orderRepository.findByUserOrderByPlacedAtDesc(user,pageable));
         return "orderList";
     }

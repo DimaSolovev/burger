@@ -15,10 +15,9 @@ logging:
 burger:
   orders:
     pageSize: 10
-
-discount:
-  codes:
-    abcdef: 10
+  discount:
+    codes:
+      abcdef: 10
 
 ---
 spring:
