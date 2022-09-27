@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet"/>
+<head>
+  <div th:replace="fragments/common :: myheader"></div>
+  <title>Orders</title>
+</head>
+<body>
+<div class="container">
+  <h1>Hello, your orders:</h1>
+  <a th:href="@{/}" id="design">Main page</a>
+</div>
+<div th:insert="fragments/common :: foot"></div>
+</body>
+</html>
