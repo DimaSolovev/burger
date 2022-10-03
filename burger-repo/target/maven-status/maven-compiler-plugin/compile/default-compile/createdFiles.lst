@@ -1,0 +1,4 @@
+burgers\repo\UserRepository.class
+burgers\repo\OrderRepository.class
+burgers\repo\BurgerRepository.class
+burgers\repo\IngredientRepository.class

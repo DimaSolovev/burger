@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    generate-unique-name: false
+    name: burger
+
+logging:
+  file:
+    name: TacoCloud.log
+  level:
+    root: INFO
+    org:
+      springframework:
+      security: DEBUG
+
+burger:
+  orders:
+    pageSize: 10
+  discount:
+    codes:
+      abcdef: 10
+
+---
+spring:
+  profiles: prod
+
+logging:
+  level:
+    tacos: WARN

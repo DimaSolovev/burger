@@ -1,0 +1,5 @@
+burgers\domain\Ingredient.class
+burgers\domain\User.class
+burgers\domain\BurgerOrder.class
+burgers\domain\Burger.class
+burgers\domain\Ingredient$Type.class

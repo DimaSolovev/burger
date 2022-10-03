@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet"/>
+<head>
+    <div th:replace="fragments/common :: myheader"></div>
+    <title>Registration</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Register</h1>
+            <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
+        </div>
+        <div class="col">
+            <form method="POST" th:action="@{/register}" th:object="${registrationForm}">
+                <div th:classappend="${userExist != null} ? is-invalid : ''"></div>
+                <div class="invalid-feedback" th:text="${userExist}">User exists</div>
+                <div class="col-3">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" class="form-control" name="username" id="username"
+                           th:classappend="${#fields.hasErrors('username')} ? is-invalid : ''"/>
+                    <div class="invalid-feedback" th:errors="*{username}">Name Error</div>
+                </div>
+                <div class="col-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input th:classappend="${passError!=null} ? is-invalid : ''"
+                           type="password" class="form-control" name="password" id="password"/>
+                    <div class="invalid-feedback" th:if="${passError != null}" th:text="${passError}"><!--если ошибка-->
+                        PasswordError
+                    </div>
+                </div>
+                <div class="col-3">
+                    <label for="confirm" class="form-label">Confirm password:</label>
+                    <input type="password" class="form-control" name="confirm" id="confirm"/>
+                </div>
+                <div class="col-3">
+                    <label for="fullname" class="form-label">Full name:</label>
+                    <input type="text" class="form-control" name="fullname" id="fullname"/>
+                </div>
+                <div class="col-3">
+                    <label for="street" class="form-label">Street:</label>
+                    <input type="text" class="form-control" name="street" id="street"/>
+                </div>
+                <div class="col-3">
+                    <label for="city" class="form-label">City:</label>
+                    <input type="text" class="form-control" name="city" id="city"/>
+                </div>
+                <div class="col-3">
+                    <label for="state" class="form-label">State:</label>
+                    <input type="text" class="form-control" name="state" id="state"/>
+                </div>
+                <div class="col-3">
+                    <label for="zip" class="form-label">Zip:</label>
+                    <input type="text" class="form-control" name="zip" id="zip"/>
+                </div>
+                <div class="col-3">
+                    <label for="phone" class="form-label">Phone:</label>
+                    <input type="text" class="form-control" name="phone" id="phone"/>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:insert="fragments/common :: foot"></div>
+</body>
+</html>

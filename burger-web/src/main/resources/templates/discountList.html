@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet"/>
+<head>
+    <div th:replace="fragments/common :: myheader"></div>
+    <title>Discount</title>
+</head>
+<body>
+<div class="container">
+    <h1>Hello dear friend</h1>
+    <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
+    <h1>Discount codes:</h1>
+
+    <ul>
+        <li th:each="code : ${codes}">
+            Use code <b>"<span th:text="${code.key}"></span>"</b> for
+            <span th:text="${code.value}"></span>% off your order.
+        </li>
+    </ul>
+    <a th:href="@{/}" id="orders">Main page</a>
+</div>
+<div th:insert="fragments/common :: foot"></div>
+</body>
+</html>

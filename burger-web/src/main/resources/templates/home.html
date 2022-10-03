@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet"/>
+<head>
+    <div th:replace="fragments/common :: myheader"></div>
+    <title>Home</title>
+</head>
+<body>
+<div class="container">
+    <h1>Hello dear friend</h1>
+    <img style="width: 500px" class="img" th:src="@{/images/burger.jpg}"/><br/>
+    <form method="POST" th:action="@{/logout}" id="logoutForm">
+        <input type="submit" value="Logout"/>
+    </form>
+    <a th:href="@{/design}" id="design">Design burger</a><br/>
+    <a th:href="@{/orders}" id="orders">You orders</a>
+</div>
+<div th:insert="fragments/common :: foot"></div>
+</body>
+</html>
