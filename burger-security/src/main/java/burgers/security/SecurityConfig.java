@@ -48,7 +48,7 @@ public class SecurityConfig {
 
                 .and()
                 .csrf()
-                .ignoringAntMatchers("/h2-console/**")
+                .ignoringAntMatchers("/h2-console/**", "/api/**")
 
                 .and()
                 .headers()

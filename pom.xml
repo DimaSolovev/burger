@@ -13,6 +13,7 @@
         <module>burger-repo</module>
         <module>burger-domain</module>
         <module>burger-security</module>
+        <module>burger-api</module>
     </modules>
     <packaging>pom</packaging>
 

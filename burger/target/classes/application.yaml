@@ -2,15 +2,18 @@ spring:
   datasource:
     generate-unique-name: false
     name: burger
+  data:
+    rest:
+      base-path: /data-api
 
-logging:
-  file:
-    name: TacoCloud.log
-  level:
-    root: INFO
-    org:
-      springframework:
-      security: DEBUG
+#logging:
+#  file:
+#    name: TacoCloud.log
+#  level:
+#    root: INFO
+#    org:
+#      springframework:
+#      security: DEBUG
 
 burger:
   orders:

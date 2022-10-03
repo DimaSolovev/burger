@@ -2,7 +2,7 @@ package burgers.repo;
 
 
 import burgers.domain.Burger;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface BurgerRepository extends CrudRepository<Burger, Long> {
+public interface BurgerRepository extends PagingAndSortingRepository<Burger, Long> {
 }

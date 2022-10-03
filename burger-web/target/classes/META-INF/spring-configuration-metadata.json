@@ -21,7 +21,8 @@
     {
       "name": "burger.orders.page-size",
       "type": "java.lang.Integer",
-      "sourceType": "burgers.web.OrderProps"
+      "sourceType": "burgers.web.OrderProps",
+      "defaultValue": 20
     },
     {
       "name": "burger.orders.pageSize",
