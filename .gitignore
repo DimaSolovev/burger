@@ -11,7 +11,7 @@
 /target
 
 # IDEs and editors
-/.idea
+/burger/.idea
 .project
 .classpath
 .c9/
