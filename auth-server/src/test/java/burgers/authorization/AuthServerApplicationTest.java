@@ -1,10 +1,9 @@
-package com.example.authserver;
+package burgers.authorization;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
 @SpringBootTest
-class AuthServerApplicationTests {
+class AuthServerApplicationTest {
 
     @Test
     void contextLoads() {
