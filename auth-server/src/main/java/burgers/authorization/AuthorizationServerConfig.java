@@ -60,9 +60,8 @@ public class AuthorizationServerConfig {
                         .scope("writeIngredients")
                         .scope("deleteIngredients")
                         .scope(OidcScopes.OPENID)
-                        .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+                        .clientSettings(ClientSettings.builder() .requireAuthorizationConsent(true).build())
                         .build();
-
         return new InMemoryRegisteredClientRepository(registeredClient);
     }
 
