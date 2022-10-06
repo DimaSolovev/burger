@@ -9,9 +9,14 @@
 /node_modules
 /node
 /target
+**/target/**
+/target/
 
 # IDEs and editors
-/burger/.idea
+.idea
+*.iws
+*.iml
+*.ipr
 .project
 .classpath
 .c9/
