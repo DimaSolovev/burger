@@ -13,7 +13,7 @@
 /target/
 
 # IDEs and editors
-.idea
+*.idea
 *.iws
 *.iml
 *.ipr
