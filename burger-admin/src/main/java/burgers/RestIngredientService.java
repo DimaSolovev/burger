@@ -13,10 +13,6 @@ public class RestIngredientService implements IngredientService{
 
     private RestTemplate restTemplate;
 
-  /*
-  public RestIngredientService() {
-   */
-
     public RestIngredientService(String accessToken) {
         this.restTemplate = new RestTemplate();
         if (accessToken != null) {
@@ -41,8 +37,7 @@ public class RestIngredientService implements IngredientService{
                 Ingredient.class);
     }
 
-    private ClientHttpRequestInterceptor
-    getBearerTokenInterceptor(String accessToken) {
+    private ClientHttpRequestInterceptor getBearerTokenInterceptor(String accessToken) {
         ClientHttpRequestInterceptor interceptor =
                 new ClientHttpRequestInterceptor() {
                     @Override

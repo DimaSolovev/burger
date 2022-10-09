@@ -70,11 +70,6 @@ public class AuthorizationServerConfig {
         return ProviderSettings.builder().build();
     }
 
-//    @Bean
-//    public ProviderSettings providerSettings() {
-//        return new ProviderSettings().issuer("http://authserver:9000");
-//    }
-
     @Bean
     public JWKSource<SecurityContext> jwkSource()
             throws NoSuchAlgorithmException {

@@ -40,6 +40,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeRequests()
+                .antMatchers("/api/orders").denyAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll() // needed for Angular/CORS
                 .antMatchers(HttpMethod.POST, "/api/ingredients")
                 .hasAuthority("SCOPE_writeIngredients")
