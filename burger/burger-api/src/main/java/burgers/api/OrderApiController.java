@@ -1,6 +1,7 @@
 package burgers.api;
 
 import burgers.domain.BurgerOrder;
+import burgers.messaging.OrderMessagingService;
 import burgers.repo.OrderRepository;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -13,8 +14,11 @@ public class OrderApiController {
 
     private OrderRepository orderRepository;
 
-    public OrderApiController(OrderRepository orderRepository) {
+    private OrderMessagingService messageService;
+
+    public OrderApiController(OrderRepository orderRepository, OrderMessagingService messageService) {
         this.orderRepository = orderRepository;
+        this.messageService = messageService;
     }
 
     @GetMapping
@@ -25,6 +29,7 @@ public class OrderApiController {
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public BurgerOrder postOrder(@RequestBody BurgerOrder burgerOrder) {
+        messageService.sendOrder(burgerOrder);
         return orderRepository.save(burgerOrder);
     }
 
