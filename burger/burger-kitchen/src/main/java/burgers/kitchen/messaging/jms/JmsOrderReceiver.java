@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
-
 @Profile("jms-template")
 @Component
 public class JmsOrderReceiver implements OrderReceiver {

@@ -3,6 +3,7 @@ package burgers.web;
 
 import burgers.domain.BurgerOrder;
 import burgers.domain.User;
+import burgers.messaging.OrderMessagingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -29,9 +30,12 @@ public class OrderController {
     private OrderRepository orderRepository;
     private OrderProps orderProps;
 
-    public OrderController(OrderRepository orderRepository, OrderProps orderProps) {
+    private OrderMessagingService messageService;
+
+    public OrderController(OrderRepository orderRepository, OrderProps orderProps, OrderMessagingService messageService) {
         this.orderRepository = orderRepository;
         this.orderProps = orderProps;
+        this.messageService = messageService;
     }
 
     @GetMapping("/current")
@@ -54,6 +58,7 @@ public class OrderController {
         log.info("Process order :{}", burgerOrder);
         burgerOrder.setUser(user);
         orderRepository.save(burgerOrder);
+        messageService.sendOrder(burgerOrder);
         sessionStatus.setComplete();
         return "redirect:/";
     }
