@@ -9,7 +9,9 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 
 @Service
-public class JmsOrderMessagingService implements OrderMessagingService {
+public class JmsOrderMessagingService
+//        implements OrderMessagingService
+{
 
     private JmsTemplate jms;
 
@@ -18,7 +20,7 @@ public class JmsOrderMessagingService implements OrderMessagingService {
         this.jms = jms;
     }
 
-    @Override
+//    @Override
     public void sendOrder(BurgerOrder order) {
         jms.convertAndSend("tacocloud.order.queue", order,
                 this::addOrderSource);

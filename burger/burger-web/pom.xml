@@ -40,9 +40,15 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.example</groupId>-->
+<!--            <artifactId>burger-messaging-jms</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>burger-messaging-jms</artifactId>
+            <artifactId>burger-messaging-rabbitmq</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

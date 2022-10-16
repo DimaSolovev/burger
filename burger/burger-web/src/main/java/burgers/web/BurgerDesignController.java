@@ -93,6 +93,9 @@ public class BurgerDesignController {
         }
         Burger saved = burgerRepository.save(burger);
         burgerOrder.addBurger(burger);
+        burgerOrder.setCcNumber("4041369528912506");
+        burgerOrder.setCcExpiration("12/23");
+        burgerOrder.setCcCVV("123");
         return "redirect:/orders/current";
     }
 }

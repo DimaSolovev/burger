@@ -1,0 +1,6 @@
+#spring:
+#  rabbitmq:
+#    template:
+#      exchange: tacocloud.order
+#      routing-key: kitchens.central
+#      queue: tacocloud.order.queue
