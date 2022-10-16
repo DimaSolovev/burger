@@ -5,6 +5,7 @@ import burgers.domain.BurgerOrder;
 import burgers.domain.User;
 import burgers.messaging.OrderMessagingService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import burgers.repo.OrderRepository;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
 
 @Slf4j
@@ -30,7 +32,6 @@ public class OrderController {
 
     private OrderRepository orderRepository;
     private OrderProps orderProps;
-
     private OrderMessagingService messageService;
 
     public OrderController(OrderRepository orderRepository, OrderProps orderProps, OrderMessagingService messageService) {
@@ -52,7 +53,7 @@ public class OrderController {
             @AuthenticationPrincipal User user,
             RedirectAttributes redirAttrs
     ) {
-        redirAttrs.addAttribute("user",user);
+        redirAttrs.addAttribute("user", user);
         if (errors.hasErrors()) {
             return "order";
         }
@@ -68,9 +69,9 @@ public class OrderController {
     public String getOrders(
             @AuthenticationPrincipal User user,
             Model model
-    ){
+    ) {
         Pageable pageable = PageRequest.of(0, orderProps.getPageSize());//нулевая страница размером 10
-        model.addAttribute("orders",orderRepository.findByUserOrderByPlacedAtDesc(user,pageable));
+        model.addAttribute("orders", orderRepository.findByUserOrderByPlacedAtDesc(user, pageable));
         return "orderList";
     }
 }
