@@ -1,13 +1,9 @@
 package burgers.messaging;
 
 import burgers.domain.BurgerOrder;
-import org.apache.kafka.clients.producer.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-
-import java.util.Properties;
-
 
 @Service
 public class KafkaOrderMessagingService implements OrderMessagingService {

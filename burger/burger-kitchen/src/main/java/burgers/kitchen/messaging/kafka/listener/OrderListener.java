@@ -21,9 +21,8 @@ public class OrderListener {
     this.ui = ui;
   }
 
-  @KafkaListener(topics="tacocloud.orders.topic")
-  public void handle(
-          BurgerOrder order, ConsumerRecord<String, BurgerOrder> record) {
+  @KafkaListener(topics="burgertopic")
+  public void handle(BurgerOrder order, ConsumerRecord<String, BurgerOrder> record) {
     log.info("Received from partition {} with timestamp {}",
         record.partition(), record.timestamp());
 

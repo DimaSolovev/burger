@@ -19,33 +19,33 @@ import java.util.Map;
 @Configuration
 public class MessagingConfig {
 
-    @Bean
+    @Bean//создает топик
     public NewTopic adviceTopic() {
         return TopicBuilder.name("burgertopic")
                 .build();
     }
 
-    //@Value("$spring.kafka.bootstrap-servers")
-    private String bootstrapServers = "localhost:9092";
-
-    public Map<String, Object> producerConfig() {
-        HashMap<String, Object> props = new HashMap<>();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-        return props;
-    }
-
-    @Bean
-    public ProducerFactory<String, BurgerOrder> producerFactory() {
-        return new DefaultKafkaProducerFactory<>(producerConfig());
-    }
-
-    @Bean
-    public KafkaTemplate<String, BurgerOrder> kafkaTemplate(
-            ProducerFactory<String, BurgerOrder> producerFactory
-    ){
-        return new KafkaTemplate<>(producerFactory);
-    }
+//    @Value("${spring.kafka.bootstrap-servers}")
+//    private String bootstrapServers="localhost:9092";
+//
+//    public Map<String, Object> producerConfig() {
+//        HashMap<String, Object> props = new HashMap<>();
+//        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+//        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+//        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+//        return props;
+//    }
+//
+//    @Bean
+//    public ProducerFactory<String, BurgerOrder> producerFactory() {
+//        return new DefaultKafkaProducerFactory<>(producerConfig());
+//    }
+//
+//    @Bean
+//    public KafkaTemplate<String, BurgerOrder> kafkaTemplate(
+//            ProducerFactory<String, BurgerOrder> producerFactory
+//    ){
+//        return new KafkaTemplate<>(producerFactory);
+//    }
 
 }

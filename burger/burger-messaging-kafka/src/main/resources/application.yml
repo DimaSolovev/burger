@@ -4,10 +4,11 @@
 # tag::kafkaDefaultTopic[]
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers:
+    - localhost:9092
     # end::kafkaBootstrapServers[]
     template:
-      default-topic: topic-example
+      default-topic: burgertopic
     # end::kafkaDefaultTopic[]
     producer:
       keySerializer: org.springframework.kafka.support.serializer.JsonSerializer
