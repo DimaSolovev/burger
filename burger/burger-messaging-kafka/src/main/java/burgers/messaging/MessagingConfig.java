@@ -25,7 +25,7 @@ public class MessagingConfig {
                 .build();
     }
 
-//    @Value("${spring.kafka.bootstrap-servers}")
+    //@Value("${spring.kafka.bootstrap-servers}")
 //    private String bootstrapServers="localhost:9092";
 //
 //    public Map<String, Object> producerConfig() {

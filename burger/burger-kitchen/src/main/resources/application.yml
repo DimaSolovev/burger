@@ -19,15 +19,21 @@ spring:
 
 ---
 spring:
-  profiles: kafka-listener
-
+  profiles:  kafka-listener
   kafka:
     bootstrap-servers:
       - localhost:9092
     template:
       default-topic: burgertopic
     consumer:
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      group-id: tacocloud_kitchen
+      group-id: messaging_api
+      auto-offset-reset: earliest
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
-        spring.json.trusted.packages: burgers.*
+        spring.json.value.default.type: burgers.BurgerOrder
+        spring.json.use.type.headers: false
+        spring.json.trusted.packages: '*'
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+
