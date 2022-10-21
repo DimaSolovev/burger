@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,11 +23,8 @@ public class BurgerApiController {
     }
 
     @GetMapping(params = "recent")
-    public Iterable<Burger> recentBurgers() {
-        PageRequest page = PageRequest.of(
-                0, 12, Sort.by("createdAt").descending());
-        List<Burger> content = burgerRepository.findAll(page).getContent();
-        return content;
+    public Flux<Burger> recentBurgers() {
+        return Flux.fromIterable(burgerRepository.findAll()).take(12);
     }
 
     @PostMapping(consumes = "application/json")
@@ -36,7 +34,7 @@ public class BurgerApiController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Burger> burgerById(@PathVariable("id") Long id) {
-        return burgerRepository.findById(id);
+    public Burger burgerById(@PathVariable("id") Long id) {
+        return burgerRepository.findById(id).orElse(null);
     }
 }

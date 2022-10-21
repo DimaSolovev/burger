@@ -46,18 +46,18 @@
 <!--            <version>0.0.1-SNAPSHOT</version>-->
 <!--            <scope>compile</scope>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.example</groupId>-->
-<!--            <artifactId>burger-messaging-rabbitmq</artifactId>-->
-<!--            <version>0.0.1-SNAPSHOT</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>burger-messaging-kafka</artifactId>
+            <artifactId>burger-messaging-rabbitmq</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.example</groupId>-->
+<!--            <artifactId>burger-messaging-kafka</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

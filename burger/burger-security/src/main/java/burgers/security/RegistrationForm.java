@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 @Data
 public class RegistrationForm {
-    @Size(min = 5, message = "Name must be at least 5 characters long")
+
     private String username;
     private String password;
     private String fullname;

@@ -1,17 +1,12 @@
 package burgers.security;
 
-import burgers.domain.User;
-import lombok.extern.slf4j.Slf4j;
+import burgers.repo.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
-import burgers.repo.UserRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
-
-@Slf4j
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
@@ -26,30 +21,13 @@ public class RegistrationController {
     }
 
     @GetMapping
-    public String registerForm(RegistrationForm registrationForm) {
+    public String registerForm() {
         return "registration";
     }
 
     @PostMapping
-    public String processRegistration(
-            @ModelAttribute @Valid RegistrationForm form,
-            Errors errors,
-            @RequestParam String confirm,
-            Model model
-    ) {
-        log.info("saving user: {}", form.getFullname());
-        User user = form.toUser(passwordEncoder);
-        if (userRepo.findByUsername(user.getUsername()) != null) {
-            model.addAttribute("userExist", "User exist");
-            return "registration";
-        }
-        if (errors.hasErrors()) {
-            if (!confirm.equals(form.getPassword())) {
-                model.addAttribute("passError", "Password are different");
-            }
-            return "registration";
-        }
-        userRepo.save(user);
+    public String processRegistration(RegistrationForm form) {
+        userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }
 }
