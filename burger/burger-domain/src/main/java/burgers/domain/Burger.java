@@ -1,38 +1,31 @@
 package burgers.domain;
 
 import lombok.Data;
-import org.springframework.data.rest.core.annotation.RestResource;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Data
-@Entity
-@RestResource(rel="burgers", path="burgers")
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class Burger {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
-    @Size(min = 5, message = "Name must be at least 5 characters long")
-    private String name;
-    @ManyToMany(targetEntity = Ingredient.class)
-    @Size(min = 1, message = "You must choose at least 1 ingredient")
-    private List<Ingredient> ingredients = new ArrayList<>();
-    private Date createdAt;
+    private @NotNull String name;
 
-    @PrePersist
-    void createdAt() {
-        this.createdAt = new Date();
+    private Set<Long> ingredientIds = new HashSet<>();
+
+    public Burger(String name) {
+        this.name = name;
     }
 
     public void addIngredient(Ingredient ingredient) {
-        ingredients.add(ingredient);
+        ingredientIds.add(ingredient.getId());
     }
 }

@@ -15,6 +15,7 @@
         <module>burger-security</module>
         <module>burger-api</module>
         <module>burger-restclient</module>
+        <module>burger-repo-r2dbc</module>
     </modules>
     <packaging>pom</packaging>
 

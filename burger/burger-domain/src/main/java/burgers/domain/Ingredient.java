@@ -1,22 +1,21 @@
 package burgers.domain;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Data
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PRIVATE,force = true)
+@NoArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode(exclude = "id")
 public class Ingredient {
     @Id
-    private final String id;
-    private final String name;
-    private final Type type;
+    private Long id;
+
+    private @NonNull String slug;
+    private @NotNull String name;
+    private @NotNull Type type;
 
     public enum Type {
         BUN, MEAT, VEGGIES, CHEESE, SAUCE
