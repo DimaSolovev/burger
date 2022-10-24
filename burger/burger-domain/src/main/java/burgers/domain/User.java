@@ -13,12 +13,15 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @Data
-@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
+@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 @RequiredArgsConstructor
 public class User implements UserDetails {
+
     private static final long serialVersionUID = 1L;
+
     @Id
     private String id;
+
     private final String username;
 
     private final String password;
@@ -28,7 +31,7 @@ public class User implements UserDetails {
     private final String state;
     private final String zip;
     private final String phoneNumber;
-    private final String email;
+    //private final String email;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,117 +1,64 @@
 package burgers.security;
 
 import burgers.domain.User;
+import burgers.repo2.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import burgers.repo.UserRepository;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+import reactor.core.publisher.Mono;
 
 @Configuration
-@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+@EnableWebFluxSecurity
+public class SecurityConfig {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/api/ingredients").permitAll()
-                .antMatchers("/api/burgers", "/api/orders/**").permitAll()
-                .mvcMatchers("/design", "/orders").hasRole("USER")
-                .antMatchers(HttpMethod.PATCH, "/api/ingredients").permitAll()
-                .antMatchers("/**").access("permitAll")
+    @Bean
+    public ReactiveUserDetailsService userDetailsService(UserRepository userRepo) {
+        return new ReactiveUserDetailsService() {
+            @Override
+            public Mono<UserDetails> findByUsername(String username) {
+                return userRepo.findByUsername(username)
+                        .map(user -> {
+                            return user;
+                        });
+            }
+        };
+    }
 
+    @Bean
+    public SecurityWebFilterChain securityWebFilterChain(
+            ServerHttpSecurity http) {
+        return http
+                .authorizeExchange()
+                .pathMatchers(HttpMethod.POST, "/api/ingredients").permitAll()
+                .pathMatchers("/api/burgers", "/api/orders/**").permitAll()
+                .pathMatchers(HttpMethod.PATCH, "/api/ingredients").permitAll()
+                .anyExchange().permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-
                 .and()
-                .httpBasic()
-                .realmName("Burger Cloud")
-
-                .and()
-                .logout()
-                .logoutSuccessUrl("/")
-
-                .and()
-                .csrf()
-                .ignoringAntMatchers("/h2-console/**", "/api/**")
-
-                // Allow pages to be loaded in frames from the same origin; needed for H2-Console
-                .and()
-                .headers()
-                .frameOptions()
-                .sameOrigin();
-    }
-//    @Bean
-//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//        return http
-//                .authorizeRequests()
-//                //.antMatchers("/api/orders").denyAll()
-//                .antMatchers(HttpMethod.OPTIONS).permitAll() // needed for Angular/CORS
-//                .antMatchers(HttpMethod.POST, "/api/ingredients")
-//                .hasAuthority("SCOPE_writeIngredients")
-//                .antMatchers(HttpMethod.DELETE, "/api/ingredients")
-//                .hasAuthority("SCOPE_deleteIngredients")
-//                .antMatchers("/api/burgers", "/api/orders/**")
-//                .permitAll()
-//                .mvcMatchers("/design", "/orders").hasRole("USER")
-//                .antMatchers("/**").access("permitAll")
-//                .and()
-//                .oauth2ResourceServer(oauth2 -> oauth2.jwt())
-//
-//                .and()
-//                .httpBasic()
-//                .realmName("Burger Cloud")
-//
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//
-//                .and()
-//                .logout()
-//                .logoutSuccessUrl("/")
-//
-//                .and()
-//                .csrf()
-//                .ignoringAntMatchers("/h2-console/**", "/api/**")
-//
-//                .and()
-//                .headers()
-//                .frameOptions()
-//                .sameOrigin()
-//
-//                .and()
-//                .build();
-//    }
-
-    @Bean
-    public PasswordEncoder encoder() {
-//    return new StandardPasswordEncoder("53cr3t");
-        return NoOpPasswordEncoder.getInstance();
+                .build();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth)
-            throws Exception {
-
-        auth
-                .userDetailsService(userDetailsService)
-                .passwordEncoder(encoder());
-
-    }
 }

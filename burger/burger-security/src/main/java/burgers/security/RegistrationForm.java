@@ -18,6 +18,8 @@ public class RegistrationForm {
     private String zip;
     private String phone;
 
+    //private String email;
+
     public User toUser(PasswordEncoder passwordEncoder) {
         return new User(
                 username, passwordEncoder.encode(password),

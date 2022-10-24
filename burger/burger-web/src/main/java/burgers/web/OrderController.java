@@ -5,8 +5,6 @@ import burgers.domain.BurgerOrder;
 import burgers.domain.User;
 import burgers.messaging.OrderMessagingService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -21,7 +19,6 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import burgers.repo.OrderRepository;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 
 @Slf4j
@@ -58,7 +55,7 @@ public class OrderController {
             return "order";
         }
         log.info("Process order :{}", burgerOrder);
-        burgerOrder.setUser(user);
+        //burgerOrder.setUser(user);
         orderRepository.save(burgerOrder);
         messageService.sendOrder(burgerOrder);
         sessionStatus.setComplete();

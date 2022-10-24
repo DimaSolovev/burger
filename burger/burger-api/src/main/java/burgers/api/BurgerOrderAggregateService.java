@@ -2,8 +2,8 @@ package burgers.api;
 
 import burgers.domain.Burger;
 import burgers.domain.BurgerOrder;
-import burgers.repo.OrderRepository;
-import burgers.repo.BurgerRepository;
+import burgers.repo2.OrderRepository;
+import burgers.repo2.BurgerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

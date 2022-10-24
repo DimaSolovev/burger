@@ -5,6 +5,10 @@ spring:
   data:
     rest:
       base-path: /data-api
+
+
+  main:
+    allow-bean-definition-overriding: true
 #  security:
 #    oauth2:
 #      resourceserver:

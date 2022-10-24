@@ -1,6 +1,6 @@
 package burgers.security;
 
-import burgers.repo.UserRepository;
+import burgers.repo2.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

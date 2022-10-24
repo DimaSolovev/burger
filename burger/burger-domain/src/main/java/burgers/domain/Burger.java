@@ -2,6 +2,7 @@ package burgers.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 
@@ -17,13 +18,9 @@ public class Burger {
     @Id
     private Long id;
 
-    private @NotNull String name;
+    private @NonNull String name;
 
     private Set<Long> ingredientIds = new HashSet<>();
-
-    public Burger(String name) {
-        this.name = name;
-    }
 
     public void addIngredient(Ingredient ingredient) {
         ingredientIds.add(ingredient.getId());

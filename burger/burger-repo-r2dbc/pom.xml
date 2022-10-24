@@ -53,7 +53,8 @@
         <dependency>
             <groupId>io.r2dbc</groupId>
             <artifactId>r2dbc-h2</artifactId>
-            <scope>runtime</scope>
+            <version>0.9.1.RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

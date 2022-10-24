@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import burgers.repo.BurgerRepository;
 import burgers.repo.IngredientRepository;
 import burgers.repo.UserRepository;
+import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
 import java.security.Principal;
@@ -50,7 +51,7 @@ public class BurgerDesignController {
     @ModelAttribute(name = "user")
     public User user(Principal principal) {
         String username = principal.getName();
-        User user = userRepository.findByUsername(username);
+        Mono<User> user = userRepository.findByUsername(username);
         return user;
     }
 

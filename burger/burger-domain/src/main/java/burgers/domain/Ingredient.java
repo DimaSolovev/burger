@@ -14,8 +14,15 @@ public class Ingredient {
     private Long id;
 
     private @NonNull String slug;
+
     private @NotNull String name;
     private @NotNull Type type;
+
+    public Ingredient(@NonNull String slug, String name, Type type) {
+        this.slug = slug;
+        this.name = name;
+        this.type = type;
+    }
 
     public enum Type {
         BUN, MEAT, VEGGIES, CHEESE, SAUCE

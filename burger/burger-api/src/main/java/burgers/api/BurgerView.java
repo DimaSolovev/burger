@@ -18,6 +18,6 @@ class BurgerView {
     }
 
     public void addIngredient(Ingredient ingredient) {
-        this.ingredients.add(ingredient);
+        ingredients.add(ingredient);
     }
 }
